@@ -1,0 +1,30 @@
+{
+  "name": "react-strip-date-picker",
+  "version": "0.0.1",
+  "description": "Pick a date using a week strip",
+  "main": "build/index.js",
+  "peerDependencies": {
+    "react": "^16"
+  },
+  "dependencies": {
+    "react": "^16",
+    "webpack": "^3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "author": {
+    "name": "Octavio Coria",
+    "email": "hi@octaviocoria.com"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26",
+    "babel-core": "^6.26",
+    "babel-loader": "^7.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26",
+    "babel-plugin-transform-react-jsx": "^6.24",
+    "babel-preset-env": "^1.6"
+  }
+}

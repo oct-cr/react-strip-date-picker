@@ -1,0 +1,30 @@
+:local(.strip) {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+ }
+
+ :local(.strip) > * {
+  flex-grow: 1;
+ }
+
+
+:local(.day) {
+  padding: .1rem 0;
+  text-align: center;
+}
+
+:local(.day) span {
+  display: block;
+  line-height: 1em;
+}
+
+:local(.day).today {
+  background: grey;
+  color: white;
+}
+
+:local(.day).active {
+  background: black;
+  color: white;
+}
