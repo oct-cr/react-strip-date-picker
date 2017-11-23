@@ -7,11 +7,12 @@
     "react": "^16"
   },
   "dependencies": {
+    "moment": "^2.19.2",
     "react": "^16",
     "webpack": "^3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest src/*.test.js",
     "start": "webpack --watch",
     "build": "webpack"
   },
@@ -22,9 +23,11 @@
   "devDependencies": {
     "babel-cli": "^6.26",
     "babel-core": "^6.26",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1",
     "babel-plugin-transform-object-rest-spread": "^6.26",
     "babel-plugin-transform-react-jsx": "^6.24",
-    "babel-preset-env": "^1.6"
+    "babel-preset-env": "^1.6",
+    "jest": "^21.2.1"
   }
 }
