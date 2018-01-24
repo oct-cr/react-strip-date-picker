@@ -4,32 +4,44 @@ import moment from 'moment'
 import styles from './common.css'
 
 
-const WeekStripDay = ({ date, active }) => {
+const getStyles = ({ date, active }) => {
+  const classes = [styles.day]
 
-  const momentDate = moment(date)
-  const weekday = momentDate.format('dd')
-  const month = momentDate.format('MMM')
-
-  function getStyles() {
-    const classes = [styles.day]
-
-    if (active) {
-      classes.push('active')
-    }
-
-    if (date.isSame(moment(), 'day')) {
-      classes.push('today')
-    }
-
-    return classes.join(' ')
+  if (active) {
+    classes.push('active')
   }
 
+  if (date.isSame(moment(), 'day')) {
+    classes.push('today')
+  }
+
+  return classes.join(' ')
+}
+
+
+const defaultRenderDay = ({ date }) => {
+  const weekday = date.format('dd')[0]
+  const day = date.date()
+
+  const month = ((date.day() === 1) || day === 1) ? date.format('MMM') : (<span>&nbsp;</span>)
 
   return (
-    <div className={getStyles()}>
-      <span>{weekday}</span>
+    <React.Fragment>
       <span>{month}</span>
-      <span>{date.date()}</span>
+      <span>{weekday}</span>
+      <span>{day}</span>
+    </React.Fragment>
+  )
+}
+
+
+const WeekStripDay = ({ date, active, renderDay = defaultRenderDay }) => {
+
+  const momentDate = moment(date)
+
+  return (
+    <div className={getStyles({ date, active })}>
+      {renderDay({ date: momentDate })}
     </div>
   )
 }
