@@ -1,6 +1,6 @@
 {
   "name": "react-strip-date-picker",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Pick a date using a week strip",
   "main": "build/index.js",
   "peerDependencies": {
@@ -21,6 +21,7 @@
     "name": "Octavio Coria",
     "email": "hi@octaviocoria.com"
   },
+  "repository": "github:crearlink/react-strip-date-picker",
   "devDependencies": {
     "babel-cli": "^6.26",
     "babel-core": "^6.26",

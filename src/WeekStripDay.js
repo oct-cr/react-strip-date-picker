@@ -51,12 +51,16 @@ const WeekStripDay = ({ date, active, renderDay = defaultRenderDay }) => {
 
 
 WeekStripDay.propTypes = {
-  date,
-  active,
+  date: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Date)
+  ]),
+  active: PropTypes.any,
   /**
    * React Component
    */
-  renderDay
+  renderDay: PropTypes.any
 }
 
 export default WeekStripDay
