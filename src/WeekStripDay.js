@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import PropTypes from 'prop-types'
 
 import styles from './common.css'
 
@@ -34,7 +35,9 @@ const defaultRenderDay = ({ date }) => {
   )
 }
 
-
+/**
+ * WeekStripDay 
+ */
 const WeekStripDay = ({ date, active, renderDay = defaultRenderDay }) => {
 
   const momentDate = moment(date)
@@ -44,6 +47,16 @@ const WeekStripDay = ({ date, active, renderDay = defaultRenderDay }) => {
       {renderDay({ date: momentDate })}
     </div>
   )
+}
+
+
+WeekStripDay.propTypes = {
+  date,
+  active,
+  /**
+   * React Component
+   */
+  renderDay
 }
 
 export default WeekStripDay

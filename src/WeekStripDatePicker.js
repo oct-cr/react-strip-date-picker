@@ -1,5 +1,6 @@
 import moment from 'moment'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import WeekStripDay from './WeekStripDay'
 import { getWeekDays } from './utils'
@@ -69,6 +70,11 @@ class WeekStripDatePicker extends Component {
     )
   }
 
+}
+
+
+WeekStripDatePicker.propTypes = {
+  onChange: PropTypes.func
 }
 
 export default WeekStripDatePicker

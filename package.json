@@ -14,7 +14,8 @@
   "scripts": {
     "test": "jest src/*.test.js",
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "build-doc": "react-doc-generator src -o DOCUMENTATION.md"
   },
   "author": {
     "name": "Octavio Coria",
@@ -30,6 +31,7 @@
     "babel-preset-env": "^1.6",
     "css-loader": "^0.28.7",
     "jest": "^21.2.1",
+    "react-doc-generator": "^1.2.5",
     "style-loader": "^0.19.0"
   }
 }
