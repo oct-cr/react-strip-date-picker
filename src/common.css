@@ -8,6 +8,9 @@
   flex-grow: 1;
  }
 
+ :local(.strip) > span {
+  flex-grow: 0;
+ }
 
 :local(.day) {
   padding: .1rem 0;
