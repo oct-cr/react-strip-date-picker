@@ -74,6 +74,7 @@ class WeekStripDatePicker extends Component {
 
 
 WeekStripDatePicker.propTypes = {
+  /** Invoked on day selection with the new date as param */
   onChange: PropTypes.func
 }
 
