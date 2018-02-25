@@ -1,6 +1,4 @@
-React Components
-----------
-
+# React Components
 
 
 ## WeekStripDatePicker
@@ -9,12 +7,12 @@ React Components
 
 Property | Type | Default value | Description
 :--- | :--- | :--- | :---
+`date`|Date \| moment||
 `onChange`|func||Invoked on day selection with the new date as param
 
 <sub>Source: **src/WeekStripDatePicker.js**</sub>
 
 -----
-
 
 ## WeekStripDay
 
@@ -22,12 +20,11 @@ Property | Type | Default value | Description
 
 Property | Type | Default value | Description
 :--- | :--- | :--- | :---
-`date`|union||Default: today
-`active`|any||Default: today
-`renderDay`|any||React Component
+`date`|Date \| moment||Default: today
+`active`|bool||
 
 <sub>Source: **src/WeekStripDay.js**</sub>
 
 -----
 
-<sub>Documentation generated using **React Doc Creator v0.0.3**</sub>
+<sub>Documentation generated using **React Doc Creator v0.0.5**</sub>

@@ -1,30 +1,37 @@
 import moment from 'moment'
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import WeekStripDay from './WeekStripDay'
 import { getWeekDays } from './utils'
+import WeekStripDay from './WeekStripDay'
 
 import styles from './common.css'
 
 
-class WeekStripDatePicker extends Component {
+class WeekStripDatePicker extends React.Component {
 
   constructor(props) {
     super(props)
 
     this.state = {
-      selectedDay: moment(),
-      visibleWeek: moment()
+      selectedDate: props.date,
+      visibleWeek: props.date
     }
 
     this.handleClick = this.selectDay.bind(this)
     this.setVisibleWeek = this.setVisibleWeek.bind(this)
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      selectedDate: nextProps.date,
+      visibleWeek: nextProps.date
+    })
+  }
+
   selectDay(date, that) {
     this.setState(() => ({
-      selectedDay: date
+      selectedDate: date
     }))
 
     if (that.props.onChange) {
@@ -42,7 +49,7 @@ class WeekStripDatePicker extends Component {
   }
 
   isSelected(date) {
-    return this.state.selectedDay.format('D M Y') === date.format('D M Y')
+    return this.state.selectedDate.format('D M Y') === date.format('D M Y')
   }
 
   render() {
@@ -74,6 +81,10 @@ class WeekStripDatePicker extends Component {
 
 
 WeekStripDatePicker.propTypes = {
+  date: PropTypes.oneOfType([
+    PropTypes.instanceOf(Date),
+    PropTypes.instanceOf(moment)
+  ]),
   /** Invoked on day selection with the new date as param */
   onChange: PropTypes.func
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-strip-date-picker",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Pick a date using a week strip",
   "main": "build/index.js",
   "peerDependencies": {
@@ -15,7 +15,7 @@
     "test": "jest src/*.test.js",
     "start": "webpack --watch",
     "build": "webpack",
-    "build:doc": "react-doc-creator src"
+    "build:doc": "react-doc-creator src --out DOCUMENTATION.md"
   },
   "author": {
     "name": "Octavio Coria",

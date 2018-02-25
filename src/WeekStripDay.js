@@ -38,30 +38,25 @@ const defaultRenderDay = ({ date }) => {
 /**
  * WeekStripDay 
  */
-const WeekStripDay = ({ date, active, renderDay = defaultRenderDay }) => {
+const WeekStripDay = ({ date, active }) => {
 
   const momentDate = moment(date)
 
   return (
     <div className={getStyles({ date, active })}>
-      {renderDay({ date: momentDate })}
+      {defaultRenderDay({ date: momentDate })}
     </div>
   )
 }
 
 
 WeekStripDay.propTypes = {
+  active: PropTypes.bool,
   /** Default: today */
   date: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
     PropTypes.instanceOf(Date),
     PropTypes.instanceOf(moment)
-  ]),
-  /** Default: today */
-  active: PropTypes.any,
-  /** React Component */
-  renderDay: PropTypes.any
+  ])
 }
 
 export default WeekStripDay
