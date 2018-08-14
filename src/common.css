@@ -13,6 +13,8 @@
  }
 
 :local(.day) {
+  margin: 0 auto;
+  max-width: 3rem;
   padding: .1rem 0;
   text-align: center;
 }
@@ -20,6 +22,10 @@
 :local(.day) span {
   display: block;
   line-height: 1em;
+}
+
+:local(.day) div {
+  padding: .25rem
 }
 
 :local(.day).today div {

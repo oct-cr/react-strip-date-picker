@@ -1,6 +1,6 @@
 {
   "name": "react-strip-date-picker",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Pick a date using a week strip",
   "main": "build/index.js",
   "peerDependencies": {
