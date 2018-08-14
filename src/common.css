@@ -22,12 +22,16 @@
   line-height: 1em;
 }
 
-:local(.day).today {
+:local(.day).today div {
   background: grey;
   color: white;
 }
 
-:local(.day).active {
+:local(.day).active div {
   background: black;
   color: white;
+}
+
+:local(.day).disabled div {
+  opacity: .5
 }

@@ -5,14 +5,21 @@ import PropTypes from 'prop-types'
 import styles from './common.css'
 
 
-const getStyles = ({ date, active }) => {
+const today = new Date()
+
+
+const getStyles = ({ date, active, disabled }) => {
   const classes = [styles.day]
 
   if (active) {
     classes.push('active')
   }
 
-  if (date.isSame(moment(), 'day')) {
+  if (disabled) {
+    classes.push('disabled')
+  }
+
+  if (date.isSame(today, 'day')) {
     classes.push('today')
   }
 
@@ -20,40 +27,43 @@ const getStyles = ({ date, active }) => {
 }
 
 
-const defaultRenderDay = ({ date }) => {
+const defaultRenderDay = ({ date, classes }) => {
   const weekday = date.format('dd')[0]
   const day = date.date()
 
   const month = ((date.day() === 1) || day === 1) ? date.format('MMM') : (<span>&nbsp;</span>)
 
+
   return (
-    <React.Fragment>
+    <div className={classes}>
       <span>{month}</span>
-      <span>{weekday}</span>
-      <span>{day}</span>
-    </React.Fragment>
+      <div className="day">
+        <span>{weekday}</span>
+        <span>{day}</span>
+      </div>
+    </div>
+
   )
 }
 
-const WeekStripDay = ({ date, active }) => {
+
+export const WeekStripDay = ({ date, active, disabled }) => {
 
   const momentDate = moment(date)
 
-  return (
-    <div className={getStyles({ date, active })}>
-      {defaultRenderDay({ date: momentDate })}
-    </div>
-  )
+  return defaultRenderDay({
+    date: momentDate, disabled,
+    classes: getStyles({ date, active, disabled })
+  })
 }
 
 
 WeekStripDay.propTypes = {
   active: PropTypes.bool,
+  disabled: PropTypes.bool,
   /** Default: today */
   date: PropTypes.oneOfType([
     PropTypes.instanceOf(Date),
     PropTypes.instanceOf(moment)
   ])
 }
-
-export default WeekStripDay

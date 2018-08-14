@@ -5,6 +5,7 @@
 Property | Type | Default value | Description
 :--- | :--- | :--- | :---
 `date`|Date \| moment||
+`minDate`|Date||
 `onChange`|func||Invoked on day selection with the new date as param
 
 <sub>Source: **src/WeekStripDatePicker.js**</sub>
@@ -16,6 +17,7 @@ Property | Type | Default value | Description
 Property | Type | Default value | Description
 :--- | :--- | :--- | :---
 `active`|bool||
+`disabled`|bool||
 `date`|Date \| moment||Default: today
 
 <sub>Source: **src/WeekStripDay.js**</sub>
