@@ -35,9 +35,6 @@ const defaultRenderDay = ({ date }) => {
   )
 }
 
-/**
- * WeekStripDay 
- */
 const WeekStripDay = ({ date, active }) => {
 
   const momentDate = moment(date)

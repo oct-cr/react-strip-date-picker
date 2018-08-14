@@ -1,9 +1,6 @@
 # React Components
 
-
 ## WeekStripDatePicker
-
-
 
 Property | Type | Default value | Description
 :--- | :--- | :--- | :---
@@ -16,15 +13,13 @@ Property | Type | Default value | Description
 
 ## WeekStripDay
 
-
-
 Property | Type | Default value | Description
 :--- | :--- | :--- | :---
-`date`|Date \| moment||Default: today
 `active`|bool||
+`date`|Date \| moment||Default: today
 
 <sub>Source: **src/WeekStripDay.js**</sub>
 
 -----
 
-<sub>Documentation generated using **React Doc Creator v0.0.5**</sub>
+<sub>Documentation generated using **React Doc Creator v0.0.8**</sub>
